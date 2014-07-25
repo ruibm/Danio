@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Danio", "Danio\Danio.csproj", "{6D2E42E6-A904-4FB5-960F-4A5C9787D7FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example1", "Example1\Example1.csproj", "{0BC51BC8-14BF-4378-B3B5-BE68963623E0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{C3299A7F-6D8D-4759-AD15-7531D72FE503}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Danio.Tests", "Danio.Tests\Danio.Tests.csproj", "{E38B19D4-4713-4CC8-AC45-4C896CD2917B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{107D12B7-1985-451C-A10E-3FAAE41E9C23}"
+	ProjectSection(SolutionItems) = preProject
+		..\README.md = ..\README.md
+		TODO.md = TODO.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleWithNugetPackage", "ExampleWithNugetPackage\ExampleWithNugetPackage.csproj", "{1A201660-5442-407C-9230-CF4CC3535111}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6D2E42E6-A904-4FB5-960F-4A5C9787D7FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D2E42E6-A904-4FB5-960F-4A5C9787D7FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D2E42E6-A904-4FB5-960F-4A5C9787D7FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D2E42E6-A904-4FB5-960F-4A5C9787D7FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BC51BC8-14BF-4378-B3B5-BE68963623E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BC51BC8-14BF-4378-B3B5-BE68963623E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BC51BC8-14BF-4378-B3B5-BE68963623E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BC51BC8-14BF-4378-B3B5-BE68963623E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E38B19D4-4713-4CC8-AC45-4C896CD2917B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E38B19D4-4713-4CC8-AC45-4C896CD2917B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E38B19D4-4713-4CC8-AC45-4C896CD2917B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E38B19D4-4713-4CC8-AC45-4C896CD2917B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A201660-5442-407C-9230-CF4CC3535111}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A201660-5442-407C-9230-CF4CC3535111}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A201660-5442-407C-9230-CF4CC3535111}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A201660-5442-407C-9230-CF4CC3535111}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
