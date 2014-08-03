@@ -17,7 +17,7 @@
         [Arg("A boolean value.")]
         public static bool MySuperBool = true;
 
-        [Arg("A public int arg.", Type = ArgType.Mandatory)]
+        [Arg("A public int arg.", IsMandatory=true)]
         public static int MyPublicIntArg = 42;
 
         [Arg("An int with allowed values.", AllowedValues = new object[] { 10, 12, 21 })]

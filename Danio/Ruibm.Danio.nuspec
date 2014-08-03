@@ -2,16 +2,16 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
     <metadata>
         <id>Ruibm.Danio</id>
-        <version>0.0.1-alpha</version>
-        <title>Danio: Command Line Argument Parser Library</title>
+        <version>0.0.1</version>
+        <title>Danio: Args Parser</title>
         <authors>Rui Barbosa Martins (http://ruibm.com)</authors>
         <owners>Rui Barbosa Martins (http://ruibm.com)</owners>
         <licenseUrl>https://raw.githubusercontent.com/ruibm/Danio/master/LICENSE</licenseUrl>
         <iconUrl>https://raw.githubusercontent.com/ruibm/Danio/master/Icon/Danio.png</iconUrl>
         <projectUrl>https://github.com/ruibm/Danio</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <description>Danio is a command line argument parser. It provides a simple and static way of defining arguments in the classes where they are actually used and it initializes everything at application start time.</description>
-        <summary>Danio: Command Line  Argument Parser Library</summary>
+        <description>Danio is a command line args parser. It provides a simple and static way of defining arguments in the classes where they are actually used and it initializes everything at application start time.</description>
+        <summary>Danio: Args Parser</summary>
         <releaseNotes>Alpha version with a few bugs still and low unit tests coverage.</releaseNotes>
         <copyright>Rui Barbosa Martins</copyright>
         <tags>args arguments options argv command line parser validation static danio</tags>

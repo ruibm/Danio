@@ -40,7 +40,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArgAttribute.cs" />
-    <Compile Include="ArgType.cs" />
     <Compile Include="Args.cs" />
     <Compile Include="IArgsState.cs" />
     <Compile Include="Internal\ArgAssigner.cs" />

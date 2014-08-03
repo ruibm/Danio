@@ -25,6 +25,7 @@
             if (!state.IsValid)
             {
                 Console.Error.WriteLine(state.GetUsage());
+                Console.Error.WriteLine(state.GetErrors());
                 Environment.Exit(-1);
             }
         }

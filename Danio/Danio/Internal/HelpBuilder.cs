@@ -22,17 +22,18 @@ using System;
             List<string> allNames = _findResult.IndexedInstances.GetAllArgumentNames();
             
             StringBuilder argumentsBuilder = new StringBuilder();
-            argumentsBuilder.AppendLine("  Description of all possible Args:");
+            argumentsBuilder.AppendLine("=== Args ===");
 
             StringBuilder usageBuilder = new StringBuilder();
-            usageBuilder.AppendFormat("Usage: {0}", System.AppDomain.CurrentDomain.FriendlyName);
+            usageBuilder.AppendLine("=== Usage ===");
+            usageBuilder.AppendFormat("  {0}", System.AppDomain.CurrentDomain.FriendlyName);
             foreach (string name in allNames)
             {
                 List<ArgInstance> instances = _findResult.IndexedInstances.GetArgInstancesForName(name);                
                 if (instances.Count == 1)
                 {
                     // Do usage.
-                    if (instances[0].Arg.Type == ArgType.Mandatory)
+                    if (instances[0].Arg.IsMandatory)
                     {
                         usageBuilder.AppendFormat(" --{0} VALUE", instances[0].Name);
                     }
@@ -45,7 +46,8 @@ using System;
                     }
                 }
             }
-
+            
+            usageBuilder.AppendLine();
             usageBuilder.AppendLine();
             usageBuilder.Append(argumentsBuilder);
             return usageBuilder.ToString();

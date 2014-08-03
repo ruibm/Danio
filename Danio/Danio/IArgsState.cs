@@ -11,5 +11,7 @@
         bool IsValid { get; }
 
         string GetUsage();
+
+        string GetErrors();
     }
 }

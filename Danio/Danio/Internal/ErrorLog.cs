@@ -25,7 +25,7 @@
             get { return _errors.Count; }
         }
 
-        public string PrettyPrintErrors()
+        public string GetErrorsPrettyPrint()
         {
             StringBuilder builder = new StringBuilder();
 
@@ -42,7 +42,7 @@
 
         public override string ToString()
         {
-            return PrettyPrintErrors();
+            return GetErrorsPrettyPrint();
         }
     }
 }

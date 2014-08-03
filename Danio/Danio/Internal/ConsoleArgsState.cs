@@ -31,6 +31,30 @@
             return help.GetUsage();
         }
 
+        public string GetErrors()
+        {
+            StringBuilder builder = new StringBuilder();
+            builder.AppendLine("=== Errors ===");
+            if (_findResult != null && !_findResult.Success)
+            {
+                builder.Append(_findResult.ErrorLog.GetErrorsPrettyPrint());
+            }
+            else if (_parseResult != null && !_parseResult.Success)
+            {
+                builder.Append(_parseResult.ErrorLog.GetErrorsPrettyPrint());
+            }
+            else if (_assignResult != null && !_assignResult.Success)
+            {
+                builder.Append(_assignResult.ErrorLog.GetErrorsPrettyPrint());
+            }
+            else
+            {
+                return string.Empty;
+            }
+
+            return builder.ToString();
+        }
+
         public bool IsValid
         {
             get 

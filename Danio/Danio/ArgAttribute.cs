@@ -14,9 +14,9 @@
         public char? ShortName { get; set; }
 
         /// <summary>
-        /// Whether this is an Optional or Mandatory argument.
+        /// Whether this Arg is Mandatory or Option argument. (Optional by default)
         /// </summary>
-        public ArgType Type { get; set; }
+        public bool IsMandatory { get; set; }
 
         /// <summary>
         /// Array of all possible values this argument can take.

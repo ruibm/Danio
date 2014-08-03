@@ -1,4 +1,4 @@
-# Danio: Command Line  Argument Parser Library for .NET
+# Danio: Args Parser for .NET
 
 
 ## Overview

@@ -32,8 +32,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Ruibm.Args">
-      <HintPath>..\packages\Ruibm.Args.0.0.2-alpha\lib\net45\Ruibm.Args.dll</HintPath>
+    <Reference Include="Ruibm.Danio">
+      <HintPath>..\packages\Ruibm.Danio.0.0.1\lib\net45\Ruibm.Danio.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

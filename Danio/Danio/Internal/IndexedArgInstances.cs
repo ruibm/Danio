@@ -9,14 +9,20 @@
     public class IndexedArgInstances
     {
         private readonly MultiDictionary<string, ArgInstance> _argInstancesByName;
+        private readonly HashSet<string> _mandatoryFullNames;
 
         public IndexedArgInstances(List<ArgInstance> instances)
         {
+            _mandatoryFullNames = new HashSet<string>();
             _argInstancesByName = new MultiDictionary<string, ArgInstance>();
             HashSet<string> tempNames = new HashSet<string>();
 
             foreach (ArgInstance currentInstance in instances)
             {
+                if (currentInstance.Arg.IsMandatory)
+                {
+                    _mandatoryFullNames.Add(currentInstance.FullName);
+                }
                 tempNames.Clear();
                 tempNames.Add(currentInstance.Name);
                 tempNames.Add(currentInstance.FullName);
@@ -29,6 +35,14 @@
                 {
                     _argInstancesByName.Add(name, currentInstance);
                 }
+            }
+        }
+
+        public HashSet<string> MandatoryFullNames
+        {
+            get
+            {
+                return _mandatoryFullNames;
             }
         }
 

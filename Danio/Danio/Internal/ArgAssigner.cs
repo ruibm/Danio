@@ -11,6 +11,7 @@
         public AssignResult AssignValues(FindResult findResult, ParseResult parseResult)
         {
             ErrorLog errorLog = new ErrorLog();
+            HashSet<string> mandatoryFullNames = new HashSet<string>(findResult.IndexedInstances.MandatoryFullNames);
 
             foreach (string argName in parseResult.Arguments.Keys)
             {
@@ -18,19 +19,28 @@
                 var instancesForNae = findResult.IndexedInstances.GetArgInstancesForName(argName);
                 if (instances.Count == 0)
                 {
-                    errorLog.Add("Argument named [{0}] does not exist.", argName);
+                    errorLog.Add("Arg named [{0}] does not exist.", argName);
                 }
                 else if (instances.Count > 1)
                 {
                     errorLog.Add(
-                        "Argument [{0}] is ambiguous. It can refer to: [{1}].",
+                        "Arg [{0}] is ambiguous. It can refer to: [{1}].",
                         ToStringByFullNames(instances));
                 }
                 else
                 {
-
-                    SetArgInstanceValueOrAddError(instances[0], parseResult.Arguments[argName], errorLog);
+                    ArgInstance instance = instances[0];
+                    SetArgInstanceValueOrAddError(instance, parseResult.Arguments[argName], errorLog);
+                    mandatoryFullNames.Remove(instance.FullName);
                 }
+            }
+
+            if (mandatoryFullNames.Count > 0)
+            {
+                List<string> sortedMandatoryArgsNotSet = new List<string>(mandatoryFullNames);
+                sortedMandatoryArgsNotSet.Sort();
+                errorLog.Add("Mandatory Args [{0}] were not explicitly set.",
+                    string.Join(", ", sortedMandatoryArgsNotSet));
             }
 
             return new AssignResult(errorLog);
