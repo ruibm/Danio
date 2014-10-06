@@ -32,15 +32,15 @@ using System;
                 List<ArgInstance> instances = _findResult.IndexedInstances.GetArgInstancesForName(name);                
                 if (instances.Count == 1)
                 {
-                    // Do usage.
-                    if (instances[0].Arg.IsMandatory)
-                    {
-                        usageBuilder.AppendFormat(" --{0} VALUE", instances[0].Name);
-                    }
-
                     // Do arguments.
                     if (printedInstances.Contains(instances[0].FullName))
                     {
+                        // Do usage.
+                        if (instances[0].Arg.IsMandatory)
+                        {
+                            usageBuilder.AppendFormat(" --{0}=VALUE", instances[0].Name);
+                        }
+
                         AppendArgInstanceUsage(argumentsBuilder, instances[0]);
                         printedInstances.Remove(instances[0].FullName);
                     }
