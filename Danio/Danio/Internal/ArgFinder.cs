@@ -2,6 +2,8 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics;
+    using System.IO;
     using System.Reflection;
 
     public class ArgFinder
@@ -29,10 +31,17 @@
 
                 foreach (AssemblyName childName in currentAssembly.GetReferencedAssemblies())
                 {
-                    Assembly child = Assembly.Load(childName);
-                    if (!scannedAssemblies.Contains(child.FullName))
+                    try
                     {
-                        assembliesToScan.Push(child);
+                        Assembly child = Assembly.Load(childName);
+                        if (!scannedAssemblies.Contains(child.FullName))
+                        {
+                            assembliesToScan.Push(child);
+                        }
+                    }
+                    catch (FileLoadException e)
+                    {
+                        Trace.TraceError("Unable to load DLL [{0}] with exception: [{1}]", childName, e);
                     }
                 }
 
