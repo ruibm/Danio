@@ -45,7 +45,19 @@
                     }
                 }
 
-                foreach (Type type in currentAssembly.GetTypes())
+                Type[] currentAssemblyTypes = null;
+                try
+                {
+                    currentAssemblyTypes = currentAssembly.GetTypes();
+                }
+                catch (ReflectionTypeLoadException e)
+                {
+                    Trace.TraceError("Unable to retrieve types for DLL [{0}] with exception: [{1}]", currentAssembly.FullName, e);
+                    continue;
+                }
+                Assertions.IsNotNull(currentAssemblyTypes, "currentAssemblyTypes cannot be null.");                
+
+                foreach (Type type in currentAssemblyTypes)
                 {
                     foreach (FieldInfo field in type.GetFields(FieldBindingFlags))
                     {

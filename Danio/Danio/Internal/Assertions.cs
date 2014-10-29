@@ -12,5 +12,13 @@
         {
             throw new AssertException(string.Format(template, templateParams));
         }
+
+        public static void IsNotNull(object obj, string template, params object[] templateParams)
+        {
+            if (obj == null)
+            {
+                Fail(template, templateParams);
+            }
+        }
     }
 }
