@@ -4,7 +4,7 @@ namespace Ruibm.Danio.Internal
     using System.Linq;
     using System.Collections.Generic;
     using System.Text;
-using System;
+    using System;
     using System.Reflection;
 
     public class HelpBuilder
@@ -83,6 +83,16 @@ using System;
             else if (instance.Field.FieldType.Equals(typeof(bool)))
             {
                 builder.Append(" (AllowedValues=[True, False])");
+            }
+            else if (instance.Field.FieldType.IsEnum)
+            {
+                Array enumValues = Enum.GetValues(instance.Field.FieldType);
+                List<string> stringValues = new List<string>(); 
+                for (int i = 0; i < enumValues.Length; ++i)
+                {
+                    stringValues.Add(enumValues.GetValue(i).ToString());
+                }
+                builder.AppendFormat(" (AllowedValues=[{0}])", string.Join(", ", stringValues));
             }
 
             if (instance.DefaultValue != null)

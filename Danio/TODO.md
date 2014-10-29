@@ -12,9 +12,9 @@ X Need to throw a validation error if the same Arg is passed multiple times in t
 X Test all mandatory fields are set.
 X Write a tutorial in the README file.
 X Need to print out the errors.
+X Return a log of Warnings.
 - Parse DateTime values.
 - Print all possible Enum values.
-- Return a log of Warnings.
 - Test that default values respect the AllowedValues enum.
 - Test all command line values are valid types.
 - bool fields should not require a value and should have --no-argname option.
