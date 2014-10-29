@@ -12,9 +12,9 @@
 
         public MultiDictionary<string, string> Arguments { get; private set; }
 
-        public ErrorLog ErrorLog { get; private set; }
+        public ExecutionLog ErrorLog { get; private set; }
 
-        public ParseResult(bool success, MultiDictionary<string, string> arguments, ErrorLog errorLog) 
+        public ParseResult(bool success, MultiDictionary<string, string> arguments, ExecutionLog errorLog) 
         {
             Success = success;
             Arguments = arguments;

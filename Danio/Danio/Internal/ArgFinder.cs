@@ -20,7 +20,8 @@
             Stack<Assembly> assembliesToScan = new Stack<Assembly>();
             HashSet<string> scannedAssemblies = new HashSet<string>();
             List<ArgInstance> args = new List<ArgInstance>();
-            ErrorLog errorLog = new ErrorLog();
+            ExecutionLog errorLog = ExecutionLog.CreateErrorLog();
+            ExecutionLog warningLog = ExecutionLog.CreateWarningLog();
 
             assembliesToScan.Push(rootAssembly);
             while (assembliesToScan.Count > 0)
@@ -41,11 +42,11 @@
                     }
                     catch (FileLoadException e)
                     {
-                        Trace.TraceError("Unable to load DLL [{0}] with exception: [{1}]", childName, e);
+                        warningLog.Add("Unable to load DLL [{0}] with exception: [{1}]", childName, e);
                     }
                     catch (FileNotFoundException e)
                     {
-                        Trace.TraceError("Could not find DLL [{0}] with exception: [{1}]", childName, e);
+                        warningLog.Add("Could not find DLL [{0}] with exception: [{1}]", childName, e);
                     }
                 }
 
@@ -56,7 +57,7 @@
                 }
                 catch (ReflectionTypeLoadException e)
                 {
-                    Trace.TraceError("Unable to retrieve types for DLL [{0}] with exception: [{1}]", currentAssembly.FullName, e);
+                    warningLog.Add("Unable to retrieve types for DLL [{0}] with exception: [{1}]", currentAssembly.FullName, e);
                     continue;
                 }
                 Assertions.IsNotNull(currentAssemblyTypes, "currentAssemblyTypes cannot be null.");                
@@ -85,7 +86,7 @@
                 }
             }
 
-            return new FindResult(args, errorLog);
+            return new FindResult(args, errorLog, warningLog);
         }
     }
 }

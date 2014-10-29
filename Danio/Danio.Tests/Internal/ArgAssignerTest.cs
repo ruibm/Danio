@@ -79,7 +79,7 @@
             {
                 parsedValues.Add(keyValues[i * 2], keyValues[i * 2 + 1]);
             }
-            return new ParseResult(successfull, parsedValues, new ErrorLog());
+            return new ParseResult(successfull, parsedValues, ExecutionLog.CreateErrorLog());
         }
 
         private class ValueClass
@@ -101,7 +101,7 @@
                     ArgInstance argInstance = new ArgInstance(attribute, fieldInfo, GetType(), this);
                     argInstances.Add(argInstance);
                 }
-                return new FindResult(argInstances, new ErrorLog());
+                return new FindResult(argInstances, ExecutionLog.CreateErrorLog(), ExecutionLog.CreateWarningLog());
             }
         }
     }

@@ -50,12 +50,12 @@
     <Compile Include="Internal\AssertException.cs" />
     <Compile Include="Internal\AssignResult.cs" />
     <Compile Include="Internal\ConsoleParser.cs" />
+    <Compile Include="Internal\ExecutionLog.cs" />
     <Compile Include="Internal\FindResult.cs" />
     <Compile Include="Internal\HelpBuilder.cs" />
     <Compile Include="Internal\IndexedArgInstances.cs" />
     <Compile Include="Internal\IParser.cs" />
     <Compile Include="Internal\MultiDictionary.cs" />
-    <Compile Include="Internal\ErrorLog.cs" />
     <Compile Include="Internal\ParseResults.cs" />
     <Compile Include="Internal\Log.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -16,7 +16,7 @@
         public ParseResult ParseArgs(string[] args)
         {
             MultiDictionary<string, string> parsedArguments = new MultiDictionary<string, string>();
-            ErrorLog errorLog = new ErrorLog();
+            ExecutionLog errorLog = ExecutionLog.CreateErrorLog();
 
             for (int i = 0; i < args.Length; ++i)
             {

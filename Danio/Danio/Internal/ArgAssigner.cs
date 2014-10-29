@@ -10,7 +10,7 @@
     {
         public AssignResult AssignValues(FindResult findResult, ParseResult parseResult)
         {
-            ErrorLog errorLog = new ErrorLog();
+            ExecutionLog errorLog = ExecutionLog.CreateErrorLog();
             HashSet<string> mandatoryFullNames = new HashSet<string>(findResult.IndexedInstances.MandatoryFullNames);
 
             foreach (string argName in parseResult.Arguments.Keys)
@@ -46,7 +46,7 @@
             return new AssignResult(errorLog);
         }
 
-        private void SetArgInstanceValueOrAddError(ArgInstance instance, List<string> values, ErrorLog errorLog)
+        private void SetArgInstanceValueOrAddError(ArgInstance instance, List<string> values, ExecutionLog errorLog)
         {
             Type fieldType = instance.Field.FieldType;
             if (fieldType.IsArray)
