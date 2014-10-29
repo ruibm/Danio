@@ -9,6 +9,9 @@ namespace Ruibm.Danio.Internal
 
     public class HelpBuilder
     {
+        [Arg("Show the usage message for this program.")]
+        public static bool help = false;
+
         private FindResult _findResult;
 
         public HelpBuilder(FindResult findResult)

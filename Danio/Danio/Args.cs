@@ -16,6 +16,12 @@
             Log.Info("Args.Init took [{0}] milliseconds to run.", 
                 stopwatch.ElapsedMilliseconds);
 
+            if (HelpBuilder.help)
+            {
+                Console.Error.WriteLine(state.GetUsage());
+                Environment.Exit(0);
+            }
+
             return state;
         }
 

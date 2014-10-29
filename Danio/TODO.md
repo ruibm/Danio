@@ -13,8 +13,9 @@ X Test all mandatory fields are set.
 X Write a tutorial in the README file.
 X Need to print out the errors.
 X Return a log of Warnings.
+X It's annoying that --help is printed as error.
+X Print all possible Enum values.
 - Parse DateTime values.
-- Print all possible Enum values.
 - Test that default values respect the AllowedValues enum.
 - Test all command line values are valid types.
 - bool fields should not require a value and should have --no-argname option.

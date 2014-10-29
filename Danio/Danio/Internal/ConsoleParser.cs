@@ -28,10 +28,16 @@
                     {
                         if (string.IsNullOrEmpty(match.Groups[2].Value)) 
                         {
-                            // The value must come after the space in the next args position.
-                            if (i + 1 >= args.Length)
+                            // Special case for the --help string.
+                            // TODO(ruibm): Potentially just support args with zero arguments.
+                            if (currentArg == "--help")
                             {
-                                errorLog.Add("Argument [{0}] does not set to a value.", currentArg);
+                                parsedArguments.Add(match.Groups[1].Value, true.ToString());
+                            }
+                            // The value must come after the space in the next args position.
+                            else if (i + 1 >= args.Length)
+                            {
+                                errorLog.Add("Argument [{0}] is not set to a value.", currentArg);
                             }
                             else
                             {
