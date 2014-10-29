@@ -43,6 +43,10 @@
                     {
                         Trace.TraceError("Unable to load DLL [{0}] with exception: [{1}]", childName, e);
                     }
+                    catch (FileNotFoundException e)
+                    {
+                        Trace.TraceError("Could not find DLL [{0}] with exception: [{1}]", childName, e);
+                    }
                 }
 
                 Type[] currentAssemblyTypes = null;
