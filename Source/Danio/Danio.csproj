@@ -4,26 +4,24 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0BC51BC8-14BF-4378-B3B5-BE68963623E0}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{6D2E42E6-A904-4FB5-960F-4A5C9787D7FB}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Ruibm.Danio.Example1</RootNamespace>
-    <AssemblyName>Ruibm.Danio.Example1</AssemblyName>
+    <RootNamespace>Ruibm.Danio</RootNamespace>
+    <AssemblyName>Ruibm.Danio</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;ARGS_LOG</DefineConstants>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -41,17 +39,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="ArgAttribute.cs" />
+    <Compile Include="Args.cs" />
+    <Compile Include="IArgsState.cs" />
+    <Compile Include="Internal\ArgAssigner.cs" />
+    <Compile Include="Internal\ArgFinder.cs" />
+    <Compile Include="Internal\ArgInstance.cs" />
+    <Compile Include="Internal\ConsoleArgsState.cs" />
+    <Compile Include="Internal\Assertions.cs" />
+    <Compile Include="Internal\AssertException.cs" />
+    <Compile Include="Internal\AssignResult.cs" />
+    <Compile Include="Internal\ConsoleParser.cs" />
+    <Compile Include="Internal\ExecutionLog.cs" />
+    <Compile Include="Internal\FindResult.cs" />
+    <Compile Include="Internal\HelpBuilder.cs" />
+    <Compile Include="Internal\IndexedArgInstances.cs" />
+    <Compile Include="Internal\IParser.cs" />
+    <Compile Include="Internal\MultiDictionary.cs" />
+    <Compile Include="Internal\ParseResults.cs" />
+    <Compile Include="Internal\Log.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Danio\Danio.csproj">
-      <Project>{6d2e42e6-a904-4fb5-960f-4a5c9787d7fb}</Project>
-      <Name>Args</Name>
-    </ProjectReference>
+    <None Include="Danio.nuspec" />
+    <None Include="NugetPack.bat" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
+    <metadata>
+        <id>Ruibm.Danio</id>
+        <version>$version$</version>
+        <title>Danio: Args Parser</title>
+        <authors>$author$</authors>
+        <owners>$author$</owners>
+        <licenseUrl>https://raw.githubusercontent.com/ruibm/Danio/master/LICENSE</licenseUrl>
+        <iconUrl>https://raw.githubusercontent.com/ruibm/Danio/master/Icon/Danio.png</iconUrl>
+        <projectUrl>https://github.com/ruibm/Danio</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>$description$</description>
+        <summary>Danio is a command line arguments parser.</summary>
+        <copyright>Rui Barbosa Martins</copyright>
+        <tags>args arguments options argv command line parser validation static danio</tags>
+    </metadata>
+    <files>
+        <file src="..\..\LICENSE" target="LICENSE" />
+        <file src="..\..\README.md" target="README.md" />
+    </files>
+</package>

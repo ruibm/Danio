@@ -15,7 +15,10 @@ X Need to print out the errors.
 X Return a log of Warnings.
 X It's annoying that --help is printed as error.
 X Print all possible Enum values.
-- Parse DateTime values.
+X Parse DateTime values.
+X The usage message should make sure that lines that are too long are wrapped and start on the next line padded.
+X Add SandCastle documentation and ship the .chm with the nupkg file.
+- Accept boolean values using just the --BoolExampleEnabled string without value.
 - Test that default values respect the AllowedValues enum.
 - Test all command line values are valid types.
 - bool fields should not require a value and should have --no-argname option.

@@ -12,6 +12,9 @@ namespace Ruibm.Danio.Internal
         [Arg("Show the usage message for this program.")]
         public static bool help = false;
 
+        private const int HelpStringStartIndex = 20;
+        private const int MinCharactersForHelp = 10;
+
         private FindResult _findResult;
 
         public HelpBuilder(FindResult findResult)
@@ -19,7 +22,7 @@ namespace Ruibm.Danio.Internal
             _findResult = findResult;
         }
 
-        public string GetUsage()
+        public string GetUsage(int maxCharactersPerLine)
         {
             HashSet<string> printedInstances = new HashSet<string>(_findResult.Instances.Select(x => x.FullName));
             List<string> allNames = _findResult.IndexedInstances.GetAllArgumentNames();
@@ -44,7 +47,7 @@ namespace Ruibm.Danio.Internal
                             usageBuilder.AppendFormat(" --{0}=VALUE", instances[0].Name);
                         }
 
-                        AppendArgInstanceUsage(argumentsBuilder, instances[0]);
+                        argumentsBuilder.Append(GetArgInstanceUsage(maxCharactersPerLine, instances[0]));                        
                         printedInstances.Remove(instances[0].FullName);
                     }
                 }
@@ -56,8 +59,9 @@ namespace Ruibm.Danio.Internal
             return usageBuilder.ToString();
         }
 
-        private static void AppendArgInstanceUsage(StringBuilder builder, ArgInstance instance)
+        private static string GetArgInstanceUsage(int maxCharactersPerLine, ArgInstance instance)
         {
+            StringBuilder builder = new StringBuilder();
             List<string> names = new List<string>();
             if (instance.ShortName != null)
             {
@@ -75,7 +79,8 @@ namespace Ruibm.Danio.Internal
 
             // No need to print the FullName as all variables must have a Name.
             // It would also make the usage string quite verbose.
-            builder.AppendFormat("{0, -20} {1}",
+            builder.AppendFormat(
+                "{0, -" + HelpStringStartIndex.ToString() + "} {1}",
                 string.Join(", ", names),
                 instance.Arg.Help);
 
@@ -109,8 +114,31 @@ namespace Ruibm.Danio.Internal
                     builder.AppendFormat(" (DefaultValue=[{0}])", instance.DefaultValue);
                 }
             }
+            return GetInMultipleLines(builder, maxCharactersPerLine); ;
+        }
 
+        private static string GetInMultipleLines(StringBuilder builder, int maxCharactersPerLine)
+        {
+            // Off by one correction otherwise the Console will auto breakline.
+            maxCharactersPerLine -= 1;
+
+            string initialString = builder.ToString();
+            int charactersForHelp = Math.Max(maxCharactersPerLine - HelpStringStartIndex, MinCharactersForHelp);
+            builder.Clear();
+            int lengthToAdd = Math.Min(maxCharactersPerLine, initialString.Length);
+            builder.Append(initialString.Substring(0, lengthToAdd));
             builder.AppendLine();
+            for (int i = lengthToAdd; i < initialString.Length;)
+            {
+                lengthToAdd = Math.Min(initialString.Length - i, charactersForHelp);
+                builder.AppendFormat(
+                    "{0, -26} {1}",
+                    string.Empty,
+                    initialString.Substring(i, lengthToAdd));
+                builder.AppendLine();
+                i += lengthToAdd;
+            }
+            return builder.ToString();
         }
     } 
 }

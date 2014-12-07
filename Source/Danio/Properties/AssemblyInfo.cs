@@ -1,15 +1,16 @@
-﻿using System.Reflection;
+﻿using Ruibm.Danio;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Args")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Danio: Args Parser")]
+[assembly: AssemblyDescription("Danio is a command line args parser. It provides a simple and static way of defining arguments in the classes where they are actually used and it initializes everything at application start time.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Args")]
+[assembly: AssemblyCompany("Rui Barbosa Martins - ruibm.com")]
+[assembly: AssemblyProduct("Ruibm.Danio")]
 [assembly: AssemblyCopyright("Copyright ©  2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -32,5 +33,14 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion(Danio.Version)]
+[assembly: AssemblyFileVersion(Danio.Version)]
+[assembly: AssemblyInformationalVersionAttribute(Danio.Version)]
+
+namespace Ruibm.Danio
+{
+    public static class Danio
+    {
+        public const string Version = "1.0.5";
+    }
+}

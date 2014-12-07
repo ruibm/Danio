@@ -72,7 +72,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Danio\Danio.csproj">
       <Project>{6d2e42e6-a904-4fb5-960f-4a5c9787d7fb}</Project>
-      <Name>Args</Name>
+      <Name>Danio</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

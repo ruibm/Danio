@@ -28,7 +28,7 @@
         public string GetUsage()
         {
             HelpBuilder help = new HelpBuilder(_findResult);
-            return help.GetUsage();
+            return help.GetUsage(Console.WindowWidth);
         }
 
         public string GetErrors()
