@@ -33,7 +33,12 @@
         private static int[] MyIntArrayArg;
 
         [Arg("A string array.")]
-        private static string[] MyStringArrayArg;
+        private static string[] MyStringArrayArg = new[]
+        {
+            "value1",
+            "another good value",
+            "113123"
+        };
 
         static void Main(string[] args)
         {

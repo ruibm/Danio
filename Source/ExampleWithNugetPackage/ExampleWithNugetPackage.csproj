@@ -8,7 +8,7 @@
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Ruibm.Danio.ExampleWithNugetPackage</RootNamespace>
-    <AssemblyName>Ruibm.Danio.ExampleWithNugetPackage</AssemblyName>
+    <AssemblyName>ExampleWithNugetPackage</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
@@ -34,9 +34,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Ruibm.Danio, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Ruibm.Danio, Version=1.0.8.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Ruibm.Danio.1.0.0\lib\net45\Ruibm.Danio.dll</HintPath>
+      <HintPath>..\packages\Ruibm.Danio.1.0.8\lib\net45\Ruibm.Danio.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

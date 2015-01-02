@@ -107,7 +107,7 @@ namespace Ruibm.Danio.Internal
             {
                 if (instance.DefaultValue.GetType().IsArray)
                 {
-                    builder.AppendFormat(" (DefaultValue=[{0}])", string.Join(", ", (Array)instance.DefaultValue));
+                    builder.AppendFormat(" (DefaultValue=[{0}])", string.Join(", ", ((Array)instance.DefaultValue).Cast<object>()));
                 }
                 else
                 {
