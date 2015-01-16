@@ -16,7 +16,7 @@
             foreach (string argName in parseResult.Arguments.Keys)
             {
                 List<ArgInstance> instances = findResult.IndexedInstances.GetArgInstancesForName(argName);
-                var instancesForNae = findResult.IndexedInstances.GetArgInstancesForName(argName);
+                var instancesForName = findResult.IndexedInstances.GetArgInstancesForName(argName);
                 if (instances.Count == 0)
                 {
                     errorLog.Add("Arg named [{0}] does not exist.", argName);
@@ -25,6 +25,7 @@
                 {
                     errorLog.Add(
                         "Arg [{0}] is ambiguous. It can refer to: [{1}].",
+                        argName,
                         ToStringByFullNames(instances));
                 }
                 else

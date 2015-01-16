@@ -14,6 +14,12 @@
             EnumValue3
         }
 
+        [Arg("The start date.")]
+        public static DateTime Start = DateTime.UtcNow.AddDays(-1);
+
+        [Arg("The end date.")]
+        public static DateTime End = DateTime.UtcNow;
+
         [Arg("A boolean value.")]
         public static bool MySuperBool = true;
 

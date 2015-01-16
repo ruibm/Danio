@@ -1,5 +1,4 @@
-﻿
-namespace Ruibm.Danio.Internal
+﻿namespace Ruibm.Danio.Internal
 {
     using System.Linq;
     using System.Collections.Generic;

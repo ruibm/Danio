@@ -86,7 +86,16 @@
                 }
             }
 
+            args = ClearDuplicates(args);
             return new FindResult(args, errorLog, warningLog);
+        }
+
+        private List<ArgInstance> ClearDuplicates(List<ArgInstance> args)
+        {
+            Dictionary<string, ArgInstance> withoutDuplicatesDict = new Dictionary<string, ArgInstance>();
+            args.ForEach(x => withoutDuplicatesDict[x.FullName] = x);
+            List<ArgInstance> withoutDuplicatesList = new List<ArgInstance>(withoutDuplicatesDict.Values);
+            return withoutDuplicatesList;
         }
     }
 }
