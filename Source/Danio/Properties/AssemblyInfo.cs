@@ -41,6 +41,6 @@ namespace Ruibm.Danio
 {
     public static class Danio
     {
-        public const string Version = "1.0.10";
+        public const string Version = "1.0.11";
     }
 }

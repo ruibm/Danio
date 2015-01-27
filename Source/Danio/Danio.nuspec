@@ -13,7 +13,7 @@
         <description>$description$</description>
         <summary>Danio is a command line arguments parser.</summary>
         <copyright>Rui Barbosa Martins</copyright>
-        <tags>args arguments options argv command line parser validation static danio</tags>
+        <tags>gflags args arguments options argv command line parser validation static danio</tags>
     </metadata>
     <files>
         <file src="..\..\LICENSE" target="LICENSE" />
