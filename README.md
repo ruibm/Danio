@@ -5,7 +5,7 @@
 
 Danio is a .NET library to parse command line arguments implemented with the same design as [gflags](https://code.google.com/p/gflags/) for C++.
 
-This is done in a very clean way by defining your command line arguments are static fields in the classes where they are actually used. You just need to add the Attribute [Arg("My help message for this argument.")] to the field in question.
+You simply need to define your command line arguments (flags) as static fields in the classes where they are actually used in. Add the Attribute **[Arg("My flag help.")]** to the field in question and it is automatically parsed and assigned when the application starts.
 
 
 ## Quick Example
