@@ -48,6 +48,10 @@
                     {
                         warningLog.Add("Could not find DLL [{0}] with exception: [{1}]", childName, e);
                     }
+                    catch (BadImageFormatException e)
+                    {
+                        warningLog.Add("Unable to load DLL [{0}] with exception: [{1}]", childName, e);
+                    }
                 }
 
                 Type[] currentAssemblyTypes = null;
