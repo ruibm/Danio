@@ -11,7 +11,7 @@
         /// <summary>
         /// The short name for this argument.
         /// </summary>
-        public char? ShortName { get; set; }
+        public string ShortName { get; set; }
 
         /// <summary>
         /// Whether this Arg is Mandatory or Option argument. (Optional by default)

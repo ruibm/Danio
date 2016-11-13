@@ -66,14 +66,7 @@
         {
             get
             {
-                if (Arg.ShortName == null)
-                {
-                    return null;
-                }
-                else
-                {
-                    return Arg.ShortName.ToString();
-                }
+                return Arg.ShortName;
             }
         }
     }

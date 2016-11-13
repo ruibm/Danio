@@ -23,6 +23,9 @@
         [Arg("A boolean value.")]
         public static bool MySuperBool = true;
 
+        [Arg("A char value with short name.", ShortName = "c")]
+        public static char MyChar;
+
         [Arg("A public int arg.", IsMandatory=true)]
         public static int MyPublicIntArg = 42;
 
